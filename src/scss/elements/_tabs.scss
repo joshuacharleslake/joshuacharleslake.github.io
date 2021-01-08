@@ -1,0 +1,74 @@
+.tabs {
+    .tabs-menu {
+        align-items: center;
+        display: flex;
+        flex-wrap: nowrap;
+        margin-bottom: -.3rem;
+
+        .tab-heading {
+            align-items: center;
+            border-bottom: 0.3rem solid $light-grey;
+            color: $grey;
+            cursor: pointer;
+            display: flex;
+            font-family: $font-secondary;
+            font-weight: 700;
+            margin-left: -.1rem;
+            margin-top: 0;
+            min-height: $row-height;
+            padding: 0.5rem 2rem;
+            transition: 0.3s ease-in;
+
+            &:before {
+                display: none;
+            }
+
+            &:first-of-type {
+                margin-left: 0;
+            }
+
+            &.is-active {
+                border-bottom: 0.3rem solid $primary;
+                color: $off-black;
+                cursor: default;
+            }
+        }
+    }
+
+    .tabs-content {
+        border-top: 0.3rem solid $light-grey; 
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .tab-content {
+            animation: fadeEffect 1.5s;
+            display: none;
+            opacity: 0;
+            overflow: hidden;
+            padding: 2rem 0;
+            transition: 0.3s ease-in;
+            visibility: hidden;
+            width: 100%;
+
+            &.is-active {
+                display: block;
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            @keyframes fadeEffect {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            .wysiwyg {
+                margin: 0;
+            }
+        }
+    }
+}

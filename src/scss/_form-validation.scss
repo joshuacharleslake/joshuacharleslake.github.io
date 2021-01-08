@@ -1,0 +1,42 @@
+.error-list {
+    animation: fadeIn 0.5s;
+    background-color: $danger-50;
+    border-radius: 0.5rem;
+    color: $white;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    transition: 0.3s ease-in;
+}
+
+.error-list-title,
+.ajax-success-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 1rem;
+}
+
+.error-list-item,
+.ajax-success-message {
+    line-height: 1.3;
+    margin: 0;
+}
+
+.success-message {
+    animation: fadeIn 0.5s;
+    background-color: $success;
+    border-radius: 0.5rem;
+    color: $white;
+    margin: 0 0 1rem;
+    padding: 1rem;
+    transition: 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

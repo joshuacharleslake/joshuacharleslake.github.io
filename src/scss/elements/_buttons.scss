@@ -1,0 +1,97 @@
+.btn {
+    background-color: $black;
+    border: 0.1rem solid $black;
+    box-shadow: none;
+    border-radius: 100px;
+    color: $white;
+    font-family: $font-secondary;
+    font-size: $font-size-5;
+    font-weight: 500;
+    min-height: $input-height;
+    padding: 5px 15px;
+    text-decoration: none;
+    transition: 0.3s ease-in;
+    &:hover {
+        border: 0.1rem solid $grey;
+        background-color: $grey;
+    }
+}
+
+.btn-primary {
+    @extend .btn;
+    background-color: $primary;
+    border-color: $primary;
+    &:hover {
+        border: 0.1rem solid $secondary;
+        background-color: $secondary;
+    }
+}
+
+.btn-secondary {
+    @extend .btn;
+    background-color: $secondary;
+    border-color: $secondary;
+    &:hover {
+        border: 0.1rem solid $primary;
+        background-color: $primary;
+    }
+}
+
+.btn-tertiary {
+    @extend .btn;
+    background-color: $tertiary;
+    border-color: $tertiary;
+}
+
+.btn-quaternary {
+    @extend .btn;
+    background-color: $quaternary;
+    border-color: $quaternary;
+}
+
+.btn-dark-grey {
+    @extend .btn;
+    background-color: $dark-grey;
+    border-color: $dark-grey;
+}
+
+.btn-grey {
+    @extend .btn;
+    background-color: $grey;
+    border-color: $grey;
+
+    &:hover {
+        background-color: $dark-grey;
+        border-color: $dark-grey;
+    }
+}
+
+.btn-light-grey {
+    @extend .btn;
+    background-color: $light-grey;
+    border-color: $light-grey;
+}
+
+.btn-success {
+    @extend .btn;
+    background-color: $success;
+    border-color: $success;
+}
+
+.btn-info {
+    @extend .btn;
+    background-color: $info;
+    border-color: $info;
+}
+
+.btn-danger {
+    @extend .btn;
+    background-color: $danger;
+    border-color: $danger;
+}
+
+.btn-warning {
+    @extend .btn;
+    background-color: $warning;
+    border-color: $warning;
+}

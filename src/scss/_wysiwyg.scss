@@ -1,0 +1,124 @@
+.wysiwyg {
+    margin: 2rem 0;
+
+    p, ul, ol, .h1, h1, .h2, h2, .h3, h3, .h4, h4, .h5, h5, .h6, h6 {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    
+    img {
+        height: auto;
+        margin-top: 1em;
+        max-width: 100%;
+        width: auto;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    ul, ol {
+        margin: .5em 0;
+        overflow: hidden;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        > li {
+            line-height: 2;
+            list-style: none;
+            margin-top: .5rem;
+            padding-left: 1.5em;
+            position: relative;
+
+            &:before {
+                left: 0;
+                position: absolute;
+            }
+        }
+    }
+
+    ul {
+        > li {
+            &:before {
+                background: $black;
+                border-radius: 50%;
+                content: "";
+                height: .6rem;
+                top: 1.3rem;
+                width: .6rem;
+            }
+        }
+    }
+
+    ol {
+        counter-reset: li-counter;
+        
+        > li {
+            counter-increment: li-counter;
+            padding-left: 2em;
+
+            &:before {
+                content: counter(li-counter)".";
+            }
+        }
+    }
+
+    blockquote {
+        border-bottom: .1rem solid $grey;
+        border-top: .1rem solid $grey;
+        margin: 2.5em auto 3em;
+        padding: 3rem 0;
+        
+        &:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 2.2rem;
+            line-height: 2.8rem;
+            position: relative;
+
+            @include min-screen($sm) {
+                font-size: 3.2rem;
+                line-height: 3.8rem;
+            }
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        cite {
+            display: block;
+            line-height: 1.2;
+            margin-left: 2rem;
+            padding-top: 2rem;
+        }
+    }
+
+	.align-left {
+        float: left;
+        margin-bottom: 2rem;
+        margin-right: 2rem;
+    }
+
+    .align-right {
+        float: right;
+        margin-bottom: 2rem;
+        margin-left: 2rem;
+    }
+
+    .align-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button {
+        margin: 0 0.5rem 0.5rem 0;
+    }
+
+}

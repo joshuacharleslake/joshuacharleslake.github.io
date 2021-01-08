@@ -1,0 +1,20 @@
+.DS_Store
+._*
+
+#dist/css
+#dist/js
+
+.sass-cache/
+node_modules/
+vendor/
+nbproject/
+npm-debug.log
+yarn-error.log
+
+# Editor directories and files
+.vscode/
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

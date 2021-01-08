@@ -1,0 +1,14 @@
+{
+    "extends": ["airbnb/base", "prettier"],
+    "plugins": ["prettier"],
+    "rules": {
+        "prettier/prettier": ["error"]
+    },
+    "env": {
+        "browser": true,
+        "node": false
+    },
+    "settings": {
+        "import/ignore": ["node_modules", "\\.(coffee|scss|css|less|hbs|svg|json)$"]
+    }
+}

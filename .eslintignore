@@ -1,0 +1,5 @@
+# Ignore libs
+src/js/imports/Libs.js
+src/js/libs.js
+
+.github/*

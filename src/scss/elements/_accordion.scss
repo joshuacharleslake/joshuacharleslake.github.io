@@ -1,0 +1,73 @@
+.accordion {
+    margin: 2rem 0;
+    .accordion-title {
+        align-items: center;
+        border-bottom: 0.1rem solid $light-grey;
+        cursor: pointer;
+        display: flex;
+        font-size: $font-size-5;
+        font-weight: 700;
+        position: relative;
+        margin-bottom: -0.1rem;
+        min-height: $row-height;
+        transition: 0.3s ease-in;
+        padding: 25px 0px;
+        color: $primary;
+        padding-right: 35px;
+        .accordion-toggle {
+            position: absolute;
+            right: 0px;
+            top: 25px;
+            width: 25px;
+            height: 25px;
+            display: block;
+            transition: 0.3s ease-in;
+            transform-origin: center center;
+            &:before {
+                font-size: 2.5rem;
+                color: $grey;
+            }
+        }
+        &:hover {
+            color: $secondary;
+        }
+        &.is-active {
+            color: $secondary;
+            .accordion-toggle {
+                transform: rotate(-180deg);
+            }
+            + .accordion-content {
+                opacity: 1;
+                border-bottom: 0.1rem solid $light-grey;
+                padding-bottom: 20px;
+            }
+        }
+    }
+    .accordion-content {
+        display: block;
+        opacity: 0;
+        height: 100%;
+        overflow: hidden;
+        max-height: 0;
+        padding: 0 2rem;
+        transition: 0.4s ease;
+        margin: 0;
+        padding: 0;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    &.circle-image-card-accordion {
+        .accordion-toggle {
+            top: 65px;
+        }
+        .circle-image-card {
+            .content {
+                p {
+                    font-weight: normal;
+                    color: $dark-grey;
+                }
+            }
+        }
+    }
+}

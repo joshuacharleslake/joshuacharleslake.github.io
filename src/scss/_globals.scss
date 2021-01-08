@@ -1,0 +1,244 @@
+/* -------- GLOBAL STYLES -------- */
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 62.5%;
+}
+
+main {
+    display: block;
+}
+
+section {
+    overflow: hidden;
+    padding: 30px 0;
+    .section-content-block {
+        background: #e9f4f4;
+        padding: 25px;
+    }
+}
+
+body {
+    color: $dark-grey;
+    fill: currentColor;
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+    overflow-x: hidden;
+}
+
+/*
+* Heading Styles
+*/
+
+.h1,
+h1,
+.h2,
+h2,
+.h3,
+h3,
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+    font-family: $font-secondary;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-top: 1rem;
+    color: $off-black;
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.h1,
+h1 {
+    font-size: $font-size-2;
+
+    @include min-screen($lg) {
+        font-size: $font-size-1;
+    }
+}
+
+.h2,
+h2 {
+    font-size: $font-size-3;
+
+    @include min-screen($lg) {
+        font-size: $font-size-2;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
+.h3,
+h3 {
+    font-size: $font-size-4;
+
+    @include min-screen($lg) {
+        font-size: $font-size-3;
+    }
+}
+
+.h4,
+h4,
+.h5,
+h5,
+.h6,
+h6 {
+    font-size: $font-size-5;
+
+    @include min-screen($lg) {
+        font-size: $font-size-4;
+    }
+}
+
+.sub-title {
+    border-bottom: 0.3rem solid $light-grey;
+    font-family: $font-secondary;
+    font-weight: 700;
+    padding-bottom: 0.5rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin-top: 1.6rem;
+    font-size: 1.4rem;
+    @include min-screen($lg) {
+        font-size: 1.6rem;
+    }
+    li {
+        padding-left: 20px;
+        position: relative;
+        margin-bottom: 10px;
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 6px;
+            content: '';
+            display: block;
+            width: 10px;
+            height: 3px;
+            background: $secondary;
+        }
+    }
+}
+ol {
+    li {
+        list-style: none;
+    }
+}
+
+p {
+    font-size: 1.4rem;
+    line-height: 2;
+    margin-top: 1.6rem;
+
+    @include min-screen($lg) {
+        font-size: 1.6rem;
+    }
+}
+
+a {
+    color: inherit;
+    font-weight: 700;
+    text-decoration: underline;
+    transition: 0.4s ease;
+
+    &:hover {
+        color: $grey;
+        cursor: pointer;
+    }
+}
+
+button {
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+button,
+html input[type='button'],
+input[type='reset'],
+input[type='submit'],
+input {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+strong,
+b {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+sup {
+    font-size: 0.75rem;
+    position: relative;
+    top: -0.4rem;
+    vertical-align: baseline;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid $light-grey;
+    margin: 0 auto 1rem;
+    width: 100%;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.img-responsive {
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.badge {
+    font-size: 11px;
+    font-style: italic;
+    display: inline-block;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+.fade-in-section {
+    animation: fade-in 1.4s;
+}
+
+
+

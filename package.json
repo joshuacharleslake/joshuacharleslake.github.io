@@ -1,0 +1,53 @@
+{
+    "name": "joshuacharleslake",
+    "version": "1.0.0",
+    "description": "joshuacharleslake.github.io",
+    "license": "UNLICENSED",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "scripts": {
+        "dev": "webpack --watch --mode=development",
+        "prod": "webpack --watch --mode=production",
+        "build": "webpack"
+    },
+    "dependencies": {
+        "axios": "^0.19.1",
+        "flickity": "^2.2.1",
+        "flickity-imagesloaded": "^2.0.0",
+        "form-serialize": "^0.7.2",
+        "html-validator": "^5.0.0",
+        "lazysizes": "^4.1.8",
+        "lodash": "^4.17.20",
+        "mobius1-selectr": "^2.4.13",
+        "smoothscroll-polyfill": "^0.4.4",
+        "style-loader": "^0.21.0",
+        "svgxuse": "^1.2.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.5.5",
+        "@babel/polyfill": "^7.8.3",
+        "@babel/preset-env": "^7.5.5",
+        "axe-core": "^3.4.1",
+        "babel-loader": "^8.0.6",
+        "babel-eslint": "^10.0.3",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "css-loader": "^0.28.11",
+        "eslint": "^6.1.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-airbnb-base": "^14.0.0",
+        "eslint-config-prettier": "^6.9.0",
+        "eslint-loader": "^3.0.3",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-prettier": "^3.1.2",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "node-sass": "^4.12.0",
+        "postcss-loader": "^2.1.4",
+        "postcss-preset-env": "^5.3.0",
+        "prettier": "^1.19.1",
+        "sass-loader": "^7.3.1",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10"
+    }
+}

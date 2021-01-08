@@ -1,0 +1,153 @@
+/*
+* Typography Modifiers
+*/
+
+// Sizes
+.is-font-size-1 {
+    font-size: $font-size-1;
+}
+
+.is-font-size-2 {
+    font-size: $font-size-2;
+}
+
+.is-font-size-3 {
+    font-size: $font-size-3;
+}
+
+.is-font-size-4 {
+    font-size: $font-size-4;
+}
+
+.is-font-size-5 {
+    font-size: $font-size-5;
+}
+
+.is-font-size-6 {
+    font-size: $font-size-6;
+}
+
+// Colours
+.text-primary {
+    color: $primary;
+}
+
+.text-secondary {
+    color: $secondary;
+}
+
+.text-tertiary {
+    color: $tertiary;
+}
+
+.text-quaternary {
+    color: $quaternary;
+}
+
+.text-dark-grey {
+    color: $dark-grey;
+}
+
+.text-grey {
+    color: $grey;
+}
+
+.text-light-grey {
+    color: $light-grey;
+}
+
+// Weights
+.is-weight-light {
+    font-weight: 100;
+}
+
+.is-weight-normal {
+    font-weight: 400;
+}
+
+.is-weight-bold {
+    font-weight: 700;
+}
+
+/*
+* Layout Modifiers
+*/
+.is-padding-0 {
+    padding: 0;
+}
+
+.is-margin-0 {
+    margin: 0;
+}
+
+.is-margin-auto {
+    margin: 0 auto;
+}
+
+/*
+* Backgrounds
+*/
+.bg-half-primary {
+    background: #fff;
+    background: linear-gradient(0deg, #fff 50%,#f3f3f3 0);
+}
+
+.bg-half-secondary {
+    background: #f3f3f3;
+    background: linear-gradient(0deg, #f3f3f3 50%,#fff 0);
+}
+
+.bg-primary {
+    background-color: $primary;
+}
+
+.bg-secondary {
+    background-color: $secondary;
+}
+
+.bg-tertiary {
+    background-color: $tertiary;
+}
+
+.bg-quaternary{
+    background-color: $quaternary;
+}
+
+.bg-dark-grey {
+    background-color: $dark-grey;
+}
+
+.bg-grey {
+    background-color: $grey;
+}
+
+.bg-light-grey {
+    background-color: $light-grey;
+}
+
+.bg-success {
+    background-color: $success;
+}
+
+.bg-danger {
+    background-color: $danger;
+}
+
+.bg-info {
+    background-color: $info;
+}
+
+.bg-warning {
+    background-color: $warning;
+}
+
+/*
+* Extras
+*/
+.is-disabled {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+}
+.pos-relative {
+    position: relative;
+}

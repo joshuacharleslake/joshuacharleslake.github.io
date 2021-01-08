@@ -1,0 +1,15 @@
+// Breakpoints
+// Usage: @include max-screen(726px);
+// Can Be Used With: $screen-xs-max, $screen-sm-max, $screen-md-max
+@mixin max-screen($value) {
+    @media only screen and (max-width: $value) {
+      @content;
+    }
+  }
+// Usage: @include min-screen(728px);
+// Can Be Used With: $screen-xs-min, $screen-sm-min, $screen-md-min, $screen-lg-min
+@mixin min-screen($value) {
+    @media only screen and (min-width: $value) {
+        @content;
+    }
+}

@@ -1,0 +1,30 @@
+// Background classes
+.bg-primary {
+    background-color: $primary;
+}
+
+.bg-secondary {
+    background-color: $secondary;
+}
+
+.bg-white {
+    background-color: $white;
+}
+
+.bg-light-grey {
+    background-color: $light-grey;
+}
+
+.bg-blue-to-grey {
+    background: $light-grey;
+
+    &:before {
+        background: #1d2d4f;
+        content: " ";
+        display: block;
+        height: 140px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

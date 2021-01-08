@@ -1,0 +1,255 @@
+.main-nav {
+    background-color: $tertiary;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    transition: 0.4s ease-in;
+    transform: translateX(-100%);
+    visibility: hidden;
+    width: 100%;
+    z-index: 5; 
+
+    @include min-screen($md) {
+        background-color: transparent;
+        height: auto;
+        opacity: 1;
+        overflow: visible;
+        position: relative;
+        top: auto;
+        transform: none;
+        visibility: visible;
+        width: auto;
+    }
+
+    // Mobile menu active state
+    &.is-active {
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .main-nav-list {
+        display: flex;
+        flex-direction: column;
+
+        @include min-screen($md) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        // Top Level Nav Items Only
+        >li {
+            a {
+                color: $white;
+                display: block;
+                font-weight: 700;
+                padding: 2rem;
+                text-decoration: none;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    color: $primary;
+                }
+
+                @include min-screen($md) {
+                    color: $black;
+                }
+            }
+        }
+
+        // All Nav Items
+        li {
+            position: relative;
+            
+            @include min-screen($md) {
+                &:hover {
+                    .sub-menu {
+                        height: auto;
+                        opacity: 1;
+                        visibility: visible;
+                        transform: translateY(0);
+                    }
+                }
+            }
+            
+            // Sub Menu Open Button
+            .sub-button {
+                background-color: transparent;
+                border: none;
+                color: $white;
+                font-size: 1.8rem;
+                height: 5.6rem;
+                position: absolute;
+                right: 0;
+                top: 0;
+                transition: 0.3s ease-in;
+                width: 5.6rem;
+
+                .icon {
+                    height: 1.5rem;
+                    pointer-events: none;
+                    width: 1.5rem;
+                }
+                
+                // Active State
+                &.is-active {
+                    transform: rotate(90deg);
+
+                    + .sub-menu {
+                        opacity: 1;
+                    }
+                }
+
+                @include min-screen($md) {
+                    display: none;
+                }
+            }
+
+            .sub-menu {
+                background: $white;
+                display: block;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: 0.3s linear;
+
+                &.is-active {
+                    opacity: 1;
+                }
+
+                li {
+                    a {
+                        color: $black;
+                        border-left: 0.5rem solid $primary;
+
+                        &:hover {
+                            color: $primary;
+                        }
+                    }
+                }
+
+                @include min-screen($md) {
+                    background: $tertiary;
+                    background: $white;
+                    border-radius: 0.5rem;
+                    box-shadow: 0 0px 1.5rem 0 rgba(0, 0, 0, 0.1);
+                    height: 0;
+                    left: 0;
+                    max-height: inherit;
+                    min-width: 20rem;
+                    opacity: 1;
+                    position: absolute;
+                    top: 100%;
+                    transform: translateY(2rem);
+                    visibility: hidden;
+
+                    &.sub-menu-left {
+                        left: auto;
+                        right: 0;
+                    }
+
+                    li {
+                        a {
+                            border-left: none;
+                            color: $black;
+
+                            &:hover {
+                               color: $primary;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Menu Link styling
+.has-submenu > a {
+    position: relative;
+
+    @include min-screen($xl) {
+        span {
+            display: none;
+        }
+    }
+}
+
+//
+// Burger Menu Button
+//
+.menu-toggle {
+    align-items: center;
+    background-color: $primary;
+    border: none;
+    color: $white;
+    font-size: 2rem;
+    display: flex;
+    height: 5rem;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+    width: 5rem;
+
+    .icon-close {
+        display: none;
+    }
+
+    &.is-active {
+        .icon-bars {
+            display: none;
+        }
+
+        .icon-close {
+            display: block;
+        }
+    }
+
+    .icon {
+        height: 2rem;
+        width: 2rem;
+    }
+
+    @include min-screen($md) {
+        display: none;
+    }
+
+    .menu-bar {
+        background: $white;
+        height: 0.2rem;
+        left: 1rem;
+        max-width: 3rem;
+        position: absolute;
+        transition: 0.3s ease-in;
+        transform-origin: top left;
+        width: 100%;
+
+        &:first-of-type {
+            top: 1rem;
+        }
+
+        &:nth-of-type(3) {
+            bottom: 1rem;
+        }
+    }
+
+    // Active State
+    &.is-active {
+        .menu-bar {
+            max-width: 4rem;
+
+            &:first-of-type {
+                transform: rotate(45deg);
+            }
+
+            &:nth-of-type(2) {
+                display: none;
+            }
+
+            &:nth-of-type(3) {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

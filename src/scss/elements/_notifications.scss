@@ -1,0 +1,82 @@
+.js-notification {
+    background-color: $light-grey;
+    border-radius: 0.2em;
+    color: $secondary;
+    display: none;
+    margin: 2em 0;
+    opacity: 0;
+    padding: 2rem 3rem;
+    position: relative;
+    transition:  opacity 0.2s ease-in-out;
+
+    &:before {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        content: "✕";
+        cursor: pointer;
+        height: 2.5rem;
+        line-height: 2.5rem;
+        position: absolute;
+        text-align: center;
+        right: 0.5em;
+        top: 0.5em;
+        width: 2.5rem;
+    }
+
+    .notification-title {
+        font-family: $font-primary;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .notification-content {
+        font-size: 1.6rem;
+        margin: 0;
+    }
+
+    &.is-active {
+        opacity: 1;
+        display: block;
+    }
+
+    &.hide {
+        height: 0;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+    }
+
+    &.is-info {
+        background-color: $info;
+        border-color: $info;
+        color: $off-black;
+    }
+
+    &.is-success {
+        background-color: $success;
+        border-color: $success;
+        color: $off-black;
+    }
+
+    &.is-danger {
+        background-color: $danger;
+        border-color: $danger;
+        color: $off-black;
+    }
+
+    &.is-warning {
+        background-color: $warning;
+        border-color: $warning;
+        color: $off-black;
+    }
+
+    ul {
+        margin-top: 1rem;
+        padding-left: 0;
+
+        li {
+            position: relative;
+        }
+    }
+}

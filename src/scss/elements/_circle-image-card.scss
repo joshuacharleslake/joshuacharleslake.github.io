@@ -1,0 +1,24 @@
+.circle-image-card {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    .image {
+        border: 3px solid $light-grey;
+        border-radius: 50%;
+        width: 100px;
+        min-width: 100px;
+        height: 100px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 10px;
+    }
+    .content {
+        margin-left: 10px;
+    }
+    &.center-align {
+        text-align: center;
+        flex-direction: column;
+    }
+}

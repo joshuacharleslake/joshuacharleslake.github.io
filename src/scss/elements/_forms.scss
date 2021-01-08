@@ -1,0 +1,418 @@
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center; // Prevent shorter elements from growing to same height as others (e.g., small buttons growing to normal sized button height)
+
+    // Because we use flex, the initial sizing of checkboxes is collapsed and
+    // doesn't occupy the full-width (which is what we want for xs grid tier),
+    // so we force that here.
+    .form-check {
+        width: 100%;
+    }
+
+    // Kick in the inline
+    @include media-breakpoint-up(sm) {
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 0;
+        }
+
+        // Inline-block all the things for "inline"
+        .form-group {
+            display: flex;
+            flex: 0 0 auto;
+            flex-flow: row wrap;
+            align-items: center;
+            margin-bottom: 0;
+        }
+
+        // Allow folks to *not* use `.form-group`
+        .form-control {
+            display: inline-block;
+            width: auto; // Prevent labels from stacking above inputs in `.form-group`
+            vertical-align: middle;
+        }
+
+        // Make static controls behave like regular ones
+        .form-control-plaintext {
+            display: inline-block;
+        }
+
+        .input-group {
+            width: auto;
+        }
+
+        // Remove default margin on radios/checkboxes that were used for stacking, and
+        // then undo the floating of radios and checkboxes to match.
+        .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            padding-left: 0;
+        }
+        .form-check-input {
+            position: relative;
+            margin-top: 0;
+            margin-right: $form-check-input-margin-x;
+            margin-left: 0;
+        }
+
+        .custom-control {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .custom-control-label {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.form-check-inline {
+    display: inline-flex;
+    align-items: center;
+    padding-left: 0; // Override base .form-check
+    margin-right: $form-check-inline-margin-x;
+
+    // Undo .form-check-input defaults and add some `margin-right`.
+    .form-check-input {
+        position: static;
+        margin-top: 0;
+        margin-right: $form-check-inline-input-margin-x;
+        margin-left: 0;
+    }
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+
+    > .col,
+    > [class*='col-'] {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+    }
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+
+    &.error {
+        border-color: red;
+
+        label {
+            color: red;
+        }
+
+        input {
+            + label {
+                &:before {
+                    border-color: red;
+                }
+            }
+        }
+
+        .input-group-btn {
+            &:first-child {
+                > .btn {
+                    border-color: red $black red red;
+                }
+            }
+
+            &:last-child {
+                > .btn {
+                    border-color: red red red $black;
+                }
+            }
+        }
+    }
+}
+
+.form-check {
+    position: relative;
+}
+
+label {
+    display: block;
+    font-family: $font-secondary;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    span {
+        color: red;
+    }
+}
+
+.boss--error {
+    color: red;
+    margin-top: 1rem;
+}
+
+.form-control {
+    background: $white;
+    border: 0.1rem solid $light-grey;
+    border-radius: 0;
+    box-shadow: none;
+    color: $off-black;
+    display: block;
+    font-family: $font-primary;
+    font-size: $font-size-5;
+    height: $input-height;
+    margin: 0;
+    padding: 0 1.2rem;
+    transition: 0.4s ease;
+    width: 100%;
+
+    &:focus {
+        border-color: $success;
+    }
+
+    &.error {
+        border-color: red;
+    }
+
+    &.form-control-select {
+        padding: 0;
+        position: relative;
+
+        &:before {
+            border-color: $black transparent;
+            border-style: solid;
+            border-width: 1rem 0.8rem 0;
+            bottom: 1.3rem;
+            content: '';
+            display: block;
+            pointer-events: none;
+            position: absolute;
+            right: 1.2rem;
+            width: 0;
+            z-index: 1;
+        }
+
+        select {
+            appearance: none;
+            background: transparent;
+            border: none;
+            box-shadow: none;
+            cursor: pointer;
+            font-size: 1.4rem;
+            height: 100%;
+            padding: 0 0.4rem;
+            text-overflow: ellipsis;
+            width: 100%;
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+
+    &.form-control {
+        height: auto;
+        padding: 1.2rem;
+    }
+}
+
+.input-group {
+    border-collapse: separate;
+    display: table;
+    position: relative;
+
+    &[class*='col-'] {
+        float: none;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .form-control {
+        float: left;
+        margin-bottom: 0;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+
+        &:focus {
+            z-index: 3;
+        }
+    }
+}
+
+.input-group-addon,
+.input-group-btn,
+.input-group .form-control {
+    display: table-cell;
+
+    &:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+}
+
+.input-group-addon,
+.input-group-btn {
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 1%;
+}
+
+.input-group-btn {
+    font-size: 0;
+    position: relative;
+    white-space: nowrap;
+
+    > .btn {
+        height: 4rem;
+        min-width: 9rem;
+
+        &:hover,
+        &:focus,
+        &:active {
+            z-index: 2;
+        }
+    }
+
+    &:first-child {
+        > .btn {
+            margin-right: -0.1rem;
+        }
+    }
+
+    &:last-child {
+        > .btn {
+            z-index: 2;
+            margin-left: -0.1rem;
+        }
+    }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    width: 2.4rem;
+    left: 1.3rem;
+    top: 0.7rem;
+    z-index: 200;
+    opacity: 0;
+
+    + label {
+        cursor: pointer;
+        display: inline-block;
+        padding-left: 3rem;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+        text-transform: none;
+
+        &:before {
+            background-color: $white;
+            border: 0.1rem solid $black;
+            content: '';
+            height: 2rem;
+            left: 0;
+            position: absolute;
+            top: -0.2rem;
+            width: 2rem;
+        }
+
+        &:after {
+            background: $black;
+            content: '';
+            height: 1.2rem;
+            left: 0.4rem;
+            opacity: 0;
+            position: absolute;
+            top: 0.2rem;
+            width: 1.2rem;
+        }
+    }
+
+    &:checked {
+        + label {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+input[type='radio'] {
+    + label {
+        &:before,
+        &:after {
+            border-radius: 50%;
+        }
+    }
+}
+
+.file-upload {
+    overflow: hidden;
+    position: relative;
+    transition: 0.4s ease;
+
+    input[type='file'] {
+        cursor: pointer;
+        height: 100%;
+        opacity: 0;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.upload-file {
+    background: $white;
+    border: 0.1rem solid transparent;
+    border-radius: 50%;
+    box-shadow: none;
+    color: $black;
+    font-family: sans-serif;
+    font-size: 1.4rem;
+    height: 3.2rem;
+    margin: 0;
+    padding: 0 0.5rem;
+    transition: 0.4s ease;
+}
+
+.msg-block {
+    display: block;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    padding: 0.6rem;
+}
+
+.form-messages {
+    display: none;
+    margin-bottom: 1.5rem;
+
+    .form-messages-error,
+    .form-messages-success {
+        border: 0.1rem solid $black;
+        display: none;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        padding: 0.8rem 0.8rem 0.6rem;
+    }
+
+    .form-messages-error {
+        border-color: $danger;
+        color: $danger;
+    }
+
+    .form-messages-success {
+        border-color: $success;
+        color: $success;
+    }
+}

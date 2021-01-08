@@ -1,0 +1,157 @@
+table,
+.table {
+    border-collapse: collapse;
+    width: 100%;
+
+    thead {
+        border: none;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        color: $off-black;
+        @include min-screen($md) {
+            clip: auto;
+            height: auto;
+            margin: auto;
+            position: relative;
+            width: auto;
+        }
+        tr {
+            border-top: none;
+        }
+    }
+
+    th {
+        font-family: $font-secondary;
+        font-weight: 700;
+        text-align: left;
+        @include min-screen($md) {
+            background: $quaternary;
+        }
+    }
+
+    tr {
+        border-bottom: 0.1rem solid $light-grey;
+        border-top: 0.1rem solid $light-grey;
+        display: block;
+        margin-bottom: 1rem;
+
+        @include min-screen($md) {
+            display: table-row;
+            margin-bottom: 0;
+        }
+    }
+
+    td,
+    th,
+    tr {
+        transition: 0.3s ease-out;
+        vertical-align: middle;
+        @include min-screen($md) {
+            padding: 1rem;
+            min-height: $row-height;
+        }
+    }
+
+    td {
+        align-items: flex-start;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        width: 100%;
+        padding: 10px 0;
+        &.show-data-label {
+            &:before {
+                content: attr(data-label);
+                display: block;
+                font-weight: 700;
+                position: relative;
+            }
+        }
+        @include min-screen($md) {
+            &:before {
+                display: none;
+            }
+            display: table-cell;
+            text-align: left;
+            width: auto;
+            padding: 10px;
+        }
+    }
+
+    &.is-striped {
+        tr {
+            &:nth-of-type(even) {
+                background-color: $light-grey;
+            }
+        }
+    }
+
+    &.is-hover {
+        tbody tr {
+            &:hover {
+                background-color: $light-grey;
+                color: $off-black;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &.is-dark {
+        td,
+        th,
+        tr {
+            background-color: $off-black;
+            color: $white;
+        }
+    }
+}
+.table-scroll {
+    overflow: auto;
+}
+
+//Custom Table Styles
+.qualifications-table {
+    @include max-screen($md) {
+        thead {
+            clip: auto;
+            height: auto;
+            margin: auto;
+            position: relative;
+            width: auto;
+            background: $quaternary;
+            .name-cell {
+                width: 65%;
+                padding: 10px;
+            }
+            .grade-cell {
+                width: 45%;
+                padding: 10px;
+                text-align: center;
+            }
+        }
+        tr {
+            display: flex;
+            border-top: none;
+            margin-bottom: 0;
+            td {
+                font-size: 1.4rem;
+                padding: 10px;
+                &.name-cell {
+                    color: #777;
+                    width: 65%;
+                }
+                &.grade-cell {
+                    width: 45%;
+                    text-align: center;
+                    display: block;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}

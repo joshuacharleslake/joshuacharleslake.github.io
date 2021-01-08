@@ -1,0 +1,44 @@
+@import "~mobius1-selectr/dist/selectr.min.css";
+
+ /*
+ *
+ * Library Overrides
+ *
+ */
+
+.selectr-selected {
+    align-items: center;
+    border: 0.1rem solid $light-grey;
+    border-radius: 0;
+    display: flex;
+    font-size: $font-size-5;
+    height: $input-height;
+}
+
+// The bit over the input when the select is clicked
+.selectr-container.open .selectr-selected {
+    border: 0.1rem solid $light-grey;
+    border-radius: 0;
+}
+
+.selectr-options-container {
+    border: 0.1rem solid $light-grey;
+    border-radius: 0;
+}
+
+.selectr-option {
+    align-items: center;
+    display: flex;
+    font-size: $font-size-5;
+    height: $input-height;
+
+    // Selected Option
+    &.selected {
+        background-color: $light-grey;
+    }
+
+    // HOVER STATE - Yes I know it seems dumb
+    &.active {
+        background-color: $primary;
+    }
+}

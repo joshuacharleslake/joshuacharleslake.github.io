@@ -1,0 +1,61 @@
+.modal {
+    align-items: center;
+    background: $overlay-background;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: 0.3s ease-out;
+    visibility: hidden;
+    width: 100%;
+    z-index: 500;
+
+    &.is-active-modal {
+        opacity: 1;
+        visibility: visible;
+
+        .modal-inner {
+            transform: scale(1);
+        }
+    }
+
+    .modal-inner {
+        max-height:80vh;
+        overflow: auto;
+        transform: scale(0.5);
+        transition: 0.3s ease-out;
+        width: 100%;
+        @include min-screen($lg) {
+            max-width: 630px;
+        }
+        @include min-screen($lg) {
+            max-width: 930px;
+        }
+        > img {
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    .js-close-modal {
+        background-color: $light-grey;
+        border: none;
+        border-radius: 50%;
+        font-size: 1.3rem;
+        height: 5rem;
+        position: absolute;
+        right: -10px;
+        text-align: center;
+        top: -20px;
+        transition: 0.3s ease-in;
+        width: 5rem;
+        z-index: 9;
+        &:hover {
+            background-color: $secondary;
+            color: $white;
+        }
+    }
+}

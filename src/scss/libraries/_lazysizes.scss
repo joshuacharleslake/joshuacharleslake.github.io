@@ -1,0 +1,11 @@
+.lazyload {
+    opacity: 0;
+}
+
+.lazyloading {
+    background-size: 25% 25%;
+    display: block;
+    opacity: 1;
+    transition: opacity 300ms;
+    background-size: 3rem 3rem;
+}
